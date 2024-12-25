@@ -1,0 +1,2 @@
+echo "This is some text" > filename.txt
+This is some text
