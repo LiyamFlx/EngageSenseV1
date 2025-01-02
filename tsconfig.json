@@ -1,7 +1,82 @@
+// This is the main TypeScript configuration file for the EngageSenseV1 project.
+// It includes references to other TypeScript configuration files and sets various compiler options.
+
+// "files": An array of filenames to be included in the program. This is currently empty.
+// "references": An array of project references, allowing for composite projects.
+//   - "path": The relative path to another tsconfig file.
+
+// "compilerOptions": Compiler options that control how TypeScript compiles the code.
+//   - "target": The JavaScript version to compile to. Here, it is set to ES2017.
+//   - "lib": A list of library files to be included in the compilation.
+//   - "allowJs": Allows JavaScript files to be compiled.
+//   - "skipLibCheck": Skips type checking of declaration files.
+//   - "strict": Enables all strict type-checking options.
+//   - "forceConsistentCasingInFileNames": Ensures that file names are case-consistent.
+//   - "noEmit": Prevents the compiler from emitting output files.
+//   - "incremental": Enables incremental compilation for faster builds.
+//   - "module": Specifies the module code generation method. Here, it is set to "esnext".
+//   - "esModuleInterop": Enables interoperability between CommonJS and ES Modules.
+//   - "moduleResolution": Determines how modules are resolved. Here, it is set to "node".
+//   - "resolveJsonModule": Allows importing JSON files as modules.
+//   - "isolatedModules": Ensures that each file is treated as a separate module.
+//   - "jsx": Specifies how JSX should be transformed. Here, it is set to "preserve".
+//   - "plugins": An array of plugins to use with the TypeScript compiler.
+//     - "name": The name of the plugin. Here, it is set to "next".
+//   - "strictNullChecks": Ensures that null and undefined are only assignable to themselves and any.
+//   - "composite": Enables composite projects, which allows for faster builds and project references.
+
+// "include": Specifies an array of file patterns to include in the program.
+//   - "next-env.d.ts": Includes the Next.js environment type definitions.
+//   - ".next/types/**/*.ts": Includes all TypeScript files in the .next/types directory.
+//   - "**/*.ts": Includes all TypeScript files in the project.
+//   - "**/*.tsx": Includes all TypeScript JSX files in the project.
+
+// "exclude": Specifies an array of file patterns to exclude from the program.
+//   - "node_modules": Excludes the node_modules directory.
 {
   "files": [],
   "references": [
-    { "path": "./tsconfig.app.json" },
-    { "path": "./tsconfig.node.json" }
+    {
+      "path": "./tsconfig.app.json"
+    },
+    {
+      "path": "./tsconfig.node.json"
+    }
+  ],
+  "compilerOptions": {
+    "target": "ES2017",
+    "lib": [
+      "dom",
+      "dom.iterable",
+      "esnext"
+    ],
+    "allowJs": true,
+    "skipLibCheck": true,
+    "strict": false,
+    "forceConsistentCasingInFileNames": true,
+    "noEmit": false,
+    "incremental": true,
+    "module": "esnext",
+    "esModuleInterop": true,
+    "moduleResolution": "node",
+    "resolveJsonModule": true,
+    "isolatedModules": true,
+    "jsx": "preserve",
+    "plugins": [
+      {
+        "name": "next"
+      }
+    ],
+    "strictNullChecks": true,
+    "composite": true
+  },
+  "include": [
+    "next-env.d.ts",
+    ".next/types/**/*.ts",
+    "**/*.ts",
+    "**/*.tsx"
+  ],
+  "exclude": [
+    "node_modules"
   ]
 }
